@@ -107,7 +107,13 @@ def lista_zakupow(**zakupy):
     print("Ilość zakupów:", len(zakupy), "\nWartość produktów:", suma)
 
 
-print(lista_zakupow(jajka=10.10, mąka=9.99))
+print(lista_zakupow(jajka=10.10, czekolada=9.99))
 
 # Zad9
 # Stwórz pakiet ciągi. Jeden moduł niech dotyczy działań i wzorów związanych z ciągami arytmetycznymi a drugi niech dotyczy działań i wzorów związanych z ciągami geometrycznymi.
+
+ciag = [1,2,3,4,5,6,7,8,9]
+
+from moduly import *
+
+print(modul1.suma(ciag))
