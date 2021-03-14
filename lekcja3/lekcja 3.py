@@ -37,11 +37,7 @@ print(parzyste)
 
 produkty = {'jajka': 'sztuki', 'woda': 'butelka', 'dzem': 'sztuki', 'mąka': 'kg'}
 
-lista_sztuki = [key for key, value in produkty.items() if value == 'sztuki']
-print(lista_sztuki)
-
-produkty_sztuki = []
-
+produkty_sztuki = [key for key, value in produkty.items() if value == 'sztuki']
 print(produkty_sztuki)
 
 
@@ -78,7 +74,6 @@ print(pole_trapez(20, 20, 20))
 
 def iloczyn_ciagu(a=1, b=4, ile=10):
     wynik = [a]
-    wynik2 = 0
     for ile in range(ile):
         wynik.append(wynik[ile] * b)
 
@@ -89,14 +84,15 @@ print(iloczyn_ciagu(1, 4, 10))
 # Zad7
 # Napisz funkcje za pomocą operatora *, która wykona te same działanie co w zadaniu 6.
 
-def iloczyn_ciagu2(b=4, *x): #nie jestem pewien czy to powinno tak wyglądać
+def iloczyn_ciagu2(b=4, *x):  # nie jestem pewien czy to powinno tak wyglądać
     iloczyn = 1
     for a in x:
         iloczyn = iloczyn * (a * b)
     return iloczyn
 
 
-print("Pierwszy argument to b, potem elementy ciągu\n", iloczyn_ciagu2(4, 1, 2, 3))
+print(iloczyn_ciagu2(4, 1, 2, 3))
+
 
 # Zad8
 # Napisz funkcję, która wykorzystuje symbol **. Funkcja ma przyjmować listę zakupów w postaci:
@@ -110,8 +106,8 @@ def lista_zakupow(**zakupy):
         suma = suma + value
     print("Ilość zakupów:", len(zakupy), "\nWartość produktów:", suma)
 
-print(lista_zakupow(jajka = 7.20, mleko = 2.99, ziemniaki = 5.50, mango = 13.49, batony = 6.37))
+
+print(lista_zakupow(jajka=10.10, czekolada=9.99))
 
 # Zad9
 # Stwórz pakiet ciągi. Jeden moduł niech dotyczy działań i wzorów związanych z ciągami arytmetycznymi a drugi niech dotyczy działań i wzorów związanych z ciągami geometrycznymi.
-
