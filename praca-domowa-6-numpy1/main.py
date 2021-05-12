@@ -38,8 +38,7 @@ def funkcja_zad4(podstawa, ilość_kolejnych):
 
 
 print(funkcja_zad4(2, 4))
-print(funkcja_zad4(20,20))
-
+print(funkcja_zad4(20, 20))
 
 
 # print(type(funkcja_zad4(2,4)))
@@ -58,6 +57,7 @@ def funkcja_zad5(dl_wektora):
 
 print(funkcja_zad5(10))
 
+
 # # Zad6.
 # # Stwórz skrypt który na wyjściu wyświetli macierz numpy (tablica wielowymiarowa)
 # # w postaci wykreślanki, gdzie jedno słowo będzie wypisane w kolumnie, jedno w wierszu i jedno po ukosie.
@@ -69,12 +69,32 @@ print(funkcja_zad5(10))
 #     return wynik
 # print(wykreslanka("abc","bcd","cda"))
 
+# Zad7.
+# Napisz funkcję, która wygeneruje macierz wielowymiarową postaci:
+# [[2 4 6]
+#  [4 2 4]
+#  [6 4 2]]
+# Przy założeniach:
+# funkcja przyjmuje parametr n, który określa wymiary macierzy jako n*n
+# i umieszcza wielokrotność liczby 2 na kolejnych jej przekątnych rozchodzących się od głównej przekątnej.
+
+def funkcja_zad7(n):
+    dwojki_diag = np.diag([2 for a in range(n)])
+    dwojki = np.array([2 for a in range(n)])
+    for a in range(n):
+        np.fill_diagonal(dwojki_diag[a + 1:], dwojki + 2 * a + 2)
+        np.fill_diagonal(dwojki_diag[:, a + 1:], dwojki + 2 * a + 2)
+    return dwojki_diag
+
+
+print(funkcja_zad7(5))
+
 
 # Zadanie 9
 # Wykorzystaj poznane na zajęciach funkcje biblioteki Numpy i stwórz macierz 5x5,
 # która będzie zawierała kolejne wartości ciągu Fibonacciego.
 
-def zadanie_9(n=5, m=5):
+def funkcja_zad9(n=5, m=5):
     temp = [0, 1]
 
     for i in range(n * m - 2):
@@ -83,4 +103,4 @@ def zadanie_9(n=5, m=5):
     return np.array(temp).reshape((n, m))
 
 
-print(zadanie_9(5, 5))
+print(funkcja_zad9(5, 5))
