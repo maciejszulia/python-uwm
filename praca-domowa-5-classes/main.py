@@ -63,12 +63,19 @@ print(material_1.wyswietl_nazwe())
 bluza_1 = ubrania("L", "czarny", "kobieta", "bawelna", 10, 10)
 print(bluza_1.wyswietl_dane())
 
-sweterek_1 = sweter("golf4","XXXL","tecza","nonbinary","rzygi_konia","20 km","20 km")
+sweterek_1 = sweter("golf4", "XXXL", "tecza", "nonbinary", "rzygi_konia", "20 km", "20 km")
 print(sweterek_1.wyswietl_dane())
+
 
 # zad 2
 # Przeciąż metodę ``__add__()`` dla klasy Kwadrat,
 # która będzie zwracała instancje klasy Kwadrat o nowym boku,
-# będącym sumą długości boku kwadratu oraz obwodu kwadratu
+# będącym sumą długości boku kwadratu oraz obwodu kwadratu      #?????
 
-class kwadrat:
+# class kwadrat:
+#     def __init__(self, a, b):
+#         self.a = a
+#         self.b = b
+#
+#     def __add__(self, other):
+
