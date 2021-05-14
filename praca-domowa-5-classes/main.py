@@ -73,9 +73,9 @@ print(sweterek_1.wyswietl_dane())
 # będącym sumą długości boku kwadratu oraz obwodu kwadratu      #?????
 
 # class kwadrat:
-#     def __init__(self, a, b):
+#     def __init__(self, a):
 #         self.a = a
-#         self.b = b
 #
 #     def __add__(self, other):
+#         self.b = 4*int(a) + int(b)
 
