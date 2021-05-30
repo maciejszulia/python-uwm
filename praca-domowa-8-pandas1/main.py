@@ -37,6 +37,23 @@ print('dziewczynki :', df[df.Plec == 'K'].agg({'Liczba': ['sum']}))
 print(df.loc[df[df.Plec == 'M'].groupby("Rok")["Liczba"].idxmax()])
 print(df.loc[df[df.Plec == 'K'].groupby("Rok")["Liczba"].idxmax()])
 
-#najbardziej popularne imię dziewczynki i chłopca w całym danym okresie,
+# najbardziej popularne imię dziewczynki i chłopca w całym danym okresie,
 print(df.loc[df[df.Plec == 'M']['Liczba'].idxmax()])
 print(df.loc[df[df.Plec == 'K']['Liczba'].idxmax()])
+
+# Zadanie 3
+
+a = pd.read_csv("zamowienia.csv", header=0, sep=';', decimal='.')
+print(a)
+print(a['Sprzedawca'].unique())
+print(a.sort_values(by='Utarg', ascending=False)['Utarg'][0:5])
+print(a.groupby(['Sprzedawca']).size())
+print(a.groupby(['Kraj']).agg({'Utarg': ['sum']}))
+print(
+    a[((a['Kraj'] == 'Polska') & (a['Data zamowienia'] >= '2005-01-01') & (a['Data zamowienia'] <= '2005-12-31'))].agg(
+        {'Utarg': ['sum']}))
+print(a[((a['Data zamowienia'].str[:4] == '2004'))]['Utarg'].mean())
+r2004 = a[((a['Data zamowienia'].str[:4] == '2004'))]
+r2005 = a[((a['Data zamowienia'].str[:4] == '2005'))]
+r2004.to_csv("zamowienia_2004.csv", sep=';', index=False)
+r2005.to_csv("zamowienia_2005.csv", sep=';', index=False)
